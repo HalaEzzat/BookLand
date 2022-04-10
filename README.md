@@ -34,12 +34,11 @@ For More Info: https://www.datadoghq.com/blog/monitoring-django-performance/
 <li>Now you should see this output on your terminal: "Performing system checks...
 
 System check identified no issues (0 silenced).
-April 10, 2022 - 12:13:25
 Django version 2.0.2, using settings 'BookStore.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 "<br /><br />Now Copy that link :"http://127.0.0.1:8000/" Paste it in your Browser</li>
-<li>For Admin user : Run "python manage.py createsuperuser" and Follow the instructions </li>
+<li>To Create The Admin user : Run "python manage.py createsuperuser" and Follow the instructions </li>
 </ol>
 
 <h2>Screenshots</h2>
