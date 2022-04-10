@@ -1,0 +1,28 @@
+# BookLand
+BookLand is a django app for a LMS (Library Management System ) :<br /><br />
+Where you can :
+
+<ul>As an "Admin":  
+<li>Add , Update , Delete : Authors , Books , Categories  </li>
+</ul>
+<ul>As an "User":
+<li>Sign-Up , Sign-In<br /></li>
+<li>Change Password </li>
+<li>Update your profile</li>
+<li>List all available books </li>
+<li>Add , List , Delete : Books to your wish list </li>
+<li>Add , List , Delete : Books to your Reading list </li>
+<li>Follow your favourite Authors and View books written by them </li> 
+<li>Follow your favourite book categories and view books under them </li>
+<li>Search by book or by author name </li>
+<li>Rate a book </li>
+<li>View top rated books</li>
+<li>View top Followed Authors</li>
+<li>View Author Bio</li>
+<li>View Category Info</li>
+  
+![image](https://user-images.githubusercontent.com/22475831/162617770-d94f7358-05a9-42ba-8323-b31840fdb2e4.png)
+![image](https://user-images.githubusercontent.com/22475831/162617855-58d7ed35-12c9-4915-a8e4-48a8d610b61a.png)
+![image](https://user-images.githubusercontent.com/22475831/162617880-86931367-5fdb-40b1-84ac-7a10fc626f1d.png)
+![image](https://user-images.githubusercontent.com/22475831/162617940-7c9fbc1a-3ce2-43cb-ba50-9bf9df9183d9.png)
+
