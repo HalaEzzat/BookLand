@@ -22,7 +22,8 @@ Where you can :
 <li>View Category Info</li></ul>
 
 <h2>Datadog: </h2>
-This app will send metrics to datadog.com by default just change the API Key
+This app will send metrics to datadog.com APM by default just install ddtrace using "pip install ddtrace"
+For More Info: https://www.datadoghq.com/blog/monitoring-django-performance/
 
 <h2>Screenshots</h2>
 
