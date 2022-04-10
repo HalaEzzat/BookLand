@@ -25,6 +25,23 @@ Where you can :
 This app will send metrics to datadog.com APM by default just install ddtrace using "pip install ddtrace"
 For More Info: https://www.datadoghq.com/blog/monitoring-django-performance/
 
+<h2>Running The App</h2>
+<ol>
+<li> Run on the terminal: "pip install -r requirements.txt"</li>
+<li> Create a root DB user and DB Named "BookStore" or change the settings for that in the DataBase section in settings.py </li>
+<li> Run "python manage.py migrate"</li>
+<li> Run "python manage.py runserver"</li>
+<li>Now you should see this output on your terminal: "Performing system checks...
+
+System check identified no issues (0 silenced).
+April 10, 2022 - 12:13:25
+Django version 2.0.2, using settings 'BookStore.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+"<br /><br />Now Copy that link :"http://127.0.0.1:8000/" Paste it in your Browser</li>
+<li>For Admin user : Run "python manage.py createsuperuser" and Follow the instructions </li>
+</ol>
+
 <h2>Screenshots</h2>
 
 ![image](https://user-images.githubusercontent.com/22475831/162617770-d94f7358-05a9-42ba-8323-b31840fdb2e4.png)
