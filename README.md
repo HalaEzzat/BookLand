@@ -29,6 +29,7 @@ For More Info: https://www.datadoghq.com/blog/monitoring-django-performance/
 <ol>
 <li> Run on the terminal: "pip install -r requirements.txt"</li>
 <li> Create a root DB user and DB Named "BookStore" or change the settings for that in the DataBase section in settings.py </li>
+<li> Create Django Secret and update settings.py</li>
 <li> Run "python manage.py migrate"</li>
 <li> Run "python manage.py runserver"</li>
 <li>Now you should see this output on your terminal: "Performing system checks...
