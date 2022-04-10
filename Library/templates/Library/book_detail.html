@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% load staticfiles %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'rate.css' %}">
+
+<script>
+
+window.addEventListener("load", function(){
+bookID=document.getElementById("bookId").value;
+
+$("span").click(function(){
+     var score=$("span").index(this)
+     if (score==0){
+      rate=5;
+     }
+     if (score==1){
+      rate=4;
+     }
+     if (score=='2'){
+      rate=3;
+     }
+     if (score=='3'){
+      rate=2;
+     }
+     if (score=='4'){
+      rate=1;
+     }
+     $.ajax({
+        url: "{% url 'rate' %}",
+        data: {
+          BookId:bookID,
+          Score:rate,
+          found:""
+
+        },
+        dataType: 'json',
+        success: function (data){
+              alert("your rating is saved "+data.Score)
+
+        },
+        		  error: function( error )
+			  {
+				  alert("error:" + error.responseText);
+			  }
+        });
+
+});
+
+
+$.ajax({
+        url: "{% url 'getRating' %}",
+        data: {
+          BookId:bookID,
+          found:""
+
+        },
+        dataType: 'json',
+        success: function (data){
+              if(data.found=="True")
+              {
+
+                         document.getElementById("hrate").innerHTML=data.rate;
+
+              }
+
+        },
+        		  error: function( error )
+			  {
+				  alert("error:" + error.responseText);
+			  }
+        });
+
+ $.ajax({
+        url: "{% url 'chk_reading' %}",
+        data: {
+          BookId:bookID,
+          found:""
+
+        },
+        dataType: 'json',
+        success: function (data){
+              if(data.found=="True")
+                      document.getElementById("read").innerHTML="reading"
+
+        },
+        		  error: function( error )
+			  {
+				  alert("error:" + error.responseText);
+			  }
+        });
+
+   $.ajax({
+        url: "{% url 'chk_wish' %}",
+        data: {
+          BookId:bookID,
+          found:""
+
+        },
+        dataType: 'json',
+        success: function (data){
+              if(data.found=="True")
+                      document.getElementById("wish").innerHTML="added to wish list"
+
+        },
+        		  error: function( error )
+			  {
+				  alert("error:" + error.responseText);
+			  }
+        });
+});
+  function readBook(bookID){
+
+  txt=document.getElementById("read").innerHTML
+  if(txt=="read"){
+   txt2=document.getElementById("wish").innerHTML
+
+        if(txt2=="added to wish list"){
+             $.ajax({
+        url: "{% url 'rmfmWish' %}",
+        data: {
+          BookId:bookID,
+          found:""
+        },
+        dataType: 'json',
+        success: function (data){
+              if(data.found=="True")
+                      document.getElementById("wish").innerHTML="add To Wish List"
+
+        },
+        		  error: function( error )
+			  {
+				  alert("error:" + error.responseText);
+			  }
+        });
+        }
+     $.ajax({
+        url: "{% url 'readBook' %}",
+        data: {
+          BookId:bookID,
+          found:""
+        },
+        dataType: 'json',
+        success: function (data){
+              if(data.found=="False")
+                      document.getElementById("read").innerHTML="reading"
+
+        },
+        		  error: function( error )
+			  {
+				  alert("error:" + error.responseText);
+			  }
+        });
+        }
+  }
+
+  function addTowish(bookId){
+  txt2=document.getElementById("read").innerHTML
+  if(txt2=="read"){
+    txt=document.getElementById("wish").innerHTML
+     if(txt=="Add to wish list"){
+     $.ajax({
+        url: "{% url 'addToWish' %}",        data: {
+
+          BookId:bookID,
+          found:""
+        },
+        dataType: 'json',
+        success: function (data){
+              if(data.found=="False")
+                      document.getElementById("wish").innerHTML="added to wish list"
+
+        },
+        		  error: function( error )
+			  {
+				  alert("error:" + error.responseText);
+			  }
+        });
+        }else{
+
+             $.ajax({
+        url: "{% url 'rmfmWish' %}",
+        data: {
+          BookId:bookID,
+          found:""
+        },
+        dataType: 'json',
+        success: function (data){
+              if(data.found=="False")
+                      document.getElementById("wish").innerHTML="add To Wish List"
+
+        },
+        		  error: function( error )
+			  {
+				  alert("error:" + error.responseText);
+			  }
+        });
+        }
+  }}
+</script>
+{% endblock %}
+
+{% block content %}
+
+  <h4>Title: {{ book.name }}</h4>
+<div class="center">
+{% if book.pic == "no images available" %}
+  <p><img src="{% static 'No_picture_available.png' %}" width="200" height="200"></p>
+
+{% else %}
+  <p><img src="{{ book.pic.url }}" width="300" height="400"></p>
+{% endif %}
+<div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+
+
+  <p><strong>Author:</strong> <a href="{{ book.author.get_absolute_url }}">{{ book.author.name }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Summary:</strong> {{ book.desc }}</p>
+  <p><strong>Published At:</strong> {{ book.publishedAt }}</p>
+  <p><strong>Country:</strong> {{ book.author.country.name }}</p>
+  <p><strong>Category:</strong> {% for genre in book.category.all %} <a href="{{genre.get_absolute_url}}">{{ genre }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p><strong>Rating:</strong></p><p id="hrate"></p>
+
+    <button id="read" onclick="readBook({{ book.id }})">read</button>
+<button id="wish" onclick="addTowish({{ book.id }})">Add to wish list</button>
+</div>
+<input hidden id="bookId" value="{{book.id}}">
+
+
+{% endblock %}

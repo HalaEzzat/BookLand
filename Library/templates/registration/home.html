@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.username }}{% endblock %}
+{% block head %}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+
+    .center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #ee6e73;
+    padding: 30px;
+}
+h2{
+margin: auto;
+    width: 50%;
+
+     padding: 30px;
+color: #ee6e73;
+}
+</style>
+
+{% endblock %}
+{% block content %}
+  <h2>Home</h2>
+<div class="center">
+    <table>
+        <tr>      <td width="10"><i class="material-icons">library_books</i></td>
+            <td><a href="{% url 'book' %}">Available books</a></td></tr>
+        <tr><td><i class="material-icons">favorite</i></td><td><a href="{% url 'wishlist' %}">My Wish List</a></td></tr>
+                <tr><td><i class="material-icons">list</i></td><td><a href="{% url 'readinglist' %}">My Reading List</a></td></tr>
+                        <tr><td><i class="material-icons">photo_album</i></td><td><a href="{% url 'followlist' %}">Books of my favourite Authors</a></td></tr>
+                        <tr><td><i class="material-icons">photo_album</i></td><td><a href="{% url 'catelist' %}">Books of my favourite categories</a></td></tr>
+
+
+    </table>
+</div>
+{% endblock %}

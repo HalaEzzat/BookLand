@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block head %}
+  <style>
+
+
+    .center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #ee6e73;
+    padding: 30px;
+}
+.btn{
+margin: auto;
+    width: 50%;
+ background-color: #ee6e73;
+     border: 3px solid ;
+
+     padding: 30px;
+
+}
+.cntr{
+margin: auto;
+    width: 50%;
+
+     padding: 30px;
+
+}
+h2{
+margin: auto;
+    width: 50%;
+
+     padding: 30px;
+color: #ee6e73;
+}
+ul,li{
+padding: 0;
+    margin: 0;
+    list-style: none;
+}
+   label
+   {
+   font-style:italic;
+   font-weight:bold;
+   font-size:30px;
+   }
+  </style>
+{% endblock %}
+{% block content %}
+
+    <h2>search</h2>
+<div class="center">
+    <div class="divsearch"><label>Books</label>
+        <ul>
+            {% for book in booksList %}
+                <li><a href="{{book.get_absolute_url}}">{{ book }}</a></li>
+            {% empty %}
+                <li>There are no book in the library match your search</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="divsearch"><label>Authors</label>
+        <ul>
+            {% for author in authorsList %}
+            <li><a href="{{author.get_absolute_url}}">{{ author }}</a></li>
+            {% empty %}
+                <li>There are no author in the library match your search</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+    {% endblock %}

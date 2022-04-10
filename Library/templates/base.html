@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'materialize/css/materialize.min.css' %}">
+
+    <script src="{% static 'jquery-3.1.1.js' %}"></script>
+<style>
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+</style>
+
+    {% block head %}
+  <meta charset="utf-8">
+  <title>{% block title %}Book Store Website{% endblock %}</title>
+{% endblock %}
+
+</head>
+<body>
+  <header>
+      <nav>
+  <div class="nav-wrapper">
+    <a href="{% url 'home' %}" class="brand-logo"><img src="{% static 'Logo-Bookland-simplu_Final-VDF-RED.png' %}" width="300" height="70"></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+     {% if user.is_authenticated %}
+      Hi {{ user.username }}!
+
+
+<li>  <form method="GET" action="/search/">
+    <!--<button class="search" onclick="search()" >Search</button>-->
+    <input  class="search" id="searchbox" name="search" type="text" placeholder="Search"></form></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+      <li><a href="{% url 'home' %}">Home </a></li>
+            <li><a href="{% url 'update' %}">Update Profile </a></li>
+                    <li><a href="{% url 'change_password' %}">Change Password </a></li>
+
+            <li><a href="{% url 'topBook' %}">Top Rated Books</a></li>
+          <li><a href="{% url 'topAuth' %}">Top Followed Authors</a></li>
+
+
+    {% else %}
+      <li><a href="{% url 'login' %}">Login</a></li>
+      <li><a href="{% url 'signup' %}">SignUp</a></li>
+    {% endif %}
+    </ul>
+  </div>
+</nav>
+  </header>
+  <hr>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <hr>
+  <nav>
+  <footer class="nav-wrapper">
+    BookLand
+    © 2018 Copyright: Hala ElHamahmy 
+  </footer>
+  </nav>
+</body>
+</html>

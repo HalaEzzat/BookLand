@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block head %}
+<style>
+
+    .center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #ee6e73;
+    padding: 30px;
+}
+.btn{
+margin: auto;
+    width: 50%;
+ background-color: #ee6e73;
+     border: 3px solid ;
+
+     padding: 30px;
+
+}
+.cntr{
+margin: auto;
+    width: 50%;
+
+     padding: 30px;
+
+}
+h2{
+margin: auto;
+    width: 50%;
+
+     padding: 30px;
+color: #ee6e73;
+}
+ul,li{
+padding: 0;
+    margin: 0;
+    list-style: none;
+}
+</style>
+<script>
+window.addEventListener("load", function(){
+$("form").each(function(index){
+   if(index==1){
+   $(this).addClass("center")
+   }
+})
+$("button").addClass("btn")
+  $("input").addClass("validate")
+  $("input").each(function(index){
+     if(index==2){$(this).attr("placeholder","First Name");}
+     if(index==3){$(this).attr("placeholder","Last Name");}
+     if(index==4){$(this).attr("placeholder","Email");}
+     if(index==5){$(this).attr("placeholder","User Name");}
+  }
+
+  )
+  $("p").addClass("input-field col s6")
+  $("label").remove()
+  $("p").wrap("<div></div>")
+  $("div").addClass("row")
+  $("form").addClass("col s6")
+  $("button").addClass("btn waves-effect waves-light")
+  $("button").wrapInner("<i class=\"material-icons right\"></i>")
+  $("ul").css("color","#ee6e73")
+  $(".helptext").css("color","#ee6e73")
+});
+
+</script>
+{% endblock %}
+{% block title %}update profile{% endblock %}
+
+{% block content %}
+<h2>Update Profile</h2>
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update" />
+</form>
+{% endblock %}

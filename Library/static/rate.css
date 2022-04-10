@@ -1,0 +1,43 @@
+.rating > span:hover:before {
+   content: "\2605";
+   position: absolute;
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+    .center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #ee6e73;
+    padding: 30px;
+}
+h4{
+margin: auto;
+    width: 50%;
+
+     padding: 30px;
+color: #ee6e73;
+}
+figcaption{
+text-align:center;
+}

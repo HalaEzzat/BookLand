@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block head %}
+<style>
+
+    .center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #ee6e73;
+    padding: 30px;
+}
+h4{
+margin: auto;
+    width: 50%;
+
+     padding: 30px;
+color: #ee6e73;
+}
+figcaption{
+text-align:center;
+}
+</style>
+{% endblock %}
+{% block content %}
+{% load staticfiles %}
+
+    <h4>Wish List</h4>
+<div class="center">
+    {% if booklist %}
+    <table>
+    {% for b in booklist %}
+    {% if forloop.first %}<tr>{% endif %}
+    {% if b.pic == "no images available" %}
+        <td><figure><img class="figure" src="{% static 'No_picture_available.png' %}" width="200" height="200" left="30px" alt="{{ b.name}}"></figure><figcaption><a href="{{b.get_absolute_url}}">{{b.name}}</a></figcaption></td>
+    {% else %}
+        <td><figure><img class="figure" src="{{ b.pic.url }}" width="200" height="200" left="30px" alt="{{ b.name}}"></figure><figcaption><a href="{{b.get_absolute_url}}">{{b.name}}</a></figcaption></td>
+    {% endif %}
+    {% if forloop.counter|divisibleby:2 %}</tr>{% endif %}
+    {% if forloop.last %}</table>{% endif %}
+{% endfor %}
+    {% else %}
+        <p>you didn't add any books to your wish list.</p>
+    {% endif %}
+</div>
+{% endblock %}

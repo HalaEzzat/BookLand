@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block head %}
+<style>
+
+    .center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #ee6e73;
+    padding: 30px;
+}
+h4{
+margin: auto;
+    width: 50%;
+
+     padding: 30px;
+color: #ee6e73;
+}
+figcaption{
+text-align:center;
+}
+</style>
+<script>
+window.addEventListener("load", function(){
+cateID=document.getElementById("myid").value;
+ $.ajax({
+        url: "{% url 'chk_Catefollow' %}",
+        data: {
+          CateId:cateID,
+          found:""
+
+        },
+        dataType: 'json',
+        success: function (data){
+              if(data.found=="True")
+                      document.getElementById("follow").innerHTML="followed"
+
+        },
+        		  error: function( error )
+			  {
+				  alert("error:" + error.responseText);
+			  }
+        });
+});
+  function followCate(cateID){
+
+  txt=document.getElementById("follow").innerHTML
+  if(txt=="followed"){
+
+   $.ajax({
+        url: "{% url 'unfollowCate' %}",
+        data: {
+          CateId:cateID,
+          found:""
+        },
+        dataType: 'json',
+        success: function (data){
+              if(data.found=="True")
+                      document.getElementById("follow").innerHTML="follow";
+
+        },
+        		  error: function( error )
+			  {
+				  alert("error:" + error.responseText);
+			  }
+        });
+        }
+
+  else{
+     $.ajax({
+        url: "{% url 'followCate' %}",
+        data: {
+          CateId:cateID,
+          found:""
+        },
+        dataType: 'json',
+        success: function (data){
+              if(data.found=="False")
+                      document.getElementById("follow").innerHTML="followed"
+
+        },
+        		  error: function( error )
+			  {
+				  alert("error:" + error.responseText);
+			  }
+        });
+        }
+  }
+</script>
+{% endblock %}
+{% block content %}
+  <h4>Title: {{ category.name }}</h4>
+<div class="center">
+  <p><strong>Name:</strong> {{ category.name }}</p> <!-- author detail link not yet defined -->
+  <p><strong>Description:</strong> {{ category.desc }}</p>
+<button id="follow" onclick="followCate({{ category.id }})">follow</button>
+</div>
+<input hidden id="myid" value="{{category.id}}">
+
+
+
+{% endblock %}
+
