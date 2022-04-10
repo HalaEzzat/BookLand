@@ -21,6 +21,10 @@ Where you can :
 <li>View Author Bio</li>
 <li>View Category Info</li></ul>
 
+<h2>Datadog: </h2>
+This app will send metrics to datadog.com by default just change the API Key
+
+<h2>Screenshots</h2>
 
 ![image](https://user-images.githubusercontent.com/22475831/162617770-d94f7358-05a9-42ba-8323-b31840fdb2e4.png)
 ![image](https://user-images.githubusercontent.com/22475831/162617855-58d7ed35-12c9-4915-a8e4-48a8d610b61a.png)
