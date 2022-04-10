@@ -2,11 +2,11 @@
 BookLand is a django app for a LMS (Library Management System ) :<br /><br />
 Where you can :
 
-<ul>As an "Admin":  
-<li>Add , Update , Delete : Authors , Books , Categories  </li>
+<h3>As an "Admin": </h3> 
+<ul><li>Add , Update , Delete : Authors , Books , Categories  </li>
 </ul>
-<ul>As an "User":
-<li>Sign-Up , Sign-In<br /></li>
+<h3>As a "User":</h3>
+<ul><li>Sign-Up , Sign-In<br /></li>
 <li>Change Password </li>
 <li>Update your profile</li>
 <li>List all available books </li>
