@@ -24,8 +24,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls,name="admin"),
     path('', views.index.as_view()),
-    path('login/',auth_views.login, name='login'),
-    path('logout/', auth_views.logout, name='logout'),
+    path('login/',auth_views.LoginView.as_view(), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('signup/', views.SignUp.as_view(),name="signup"),
     path('update/',views.UpdateProfile.as_view(),name="update"),
     path('password/', views.change_password, name='change_password'),

@@ -1,80 +1,0 @@
-[34m
-* Datadog Agent install script v1.8.0.post
-[0m
-[34m
-* Installing apt-transport-https, curl and gnupg
-[0m
-Hit:1 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu focal InRelease
-Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
-Hit:3 http://us.archive.ubuntu.com/ubuntu focal InRelease
-Hit:4 http://repo.mysql.com/apt/ubuntu bionic InRelease
-Get:5 http://us.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
-Get:6 http://security.ubuntu.com/ubuntu focal-security/main i386 Packages [417 kB]
-Ign:7 https://apt.datadoghq.com stable InRelease
-Get:8 https://apt.datadoghq.com stable Release [9,927 B]
-Get:9 https://download.docker.com/linux/ubuntu focal InRelease [57.7 kB]
-Get:10 https://apt.datadoghq.com stable Release.gpg [801 B]
-Get:11 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [1,384 kB]
-Get:12 https://apt.datadoghq.com stable/7 amd64 Packages [19.2 kB]
-Get:13 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [239 kB]
-Get:14 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [40.7 kB]
-Get:15 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [66.4 kB]
-Get:16 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2,464 B]
-Get:17 http://us.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
-Get:18 http://us.archive.ubuntu.com/ubuntu focal-updates/main i386 Packages [629 kB]
-Get:19 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1,711 kB]
-Get:20 http://us.archive.ubuntu.com/ubuntu focal-updates/main Translation-en [320 kB]
-Get:21 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 DEP-11 Metadata [278 kB]
-Get:22 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [916 kB]
-Get:23 http://us.archive.ubuntu.com/ubuntu focal-updates/universe amd64 DEP-11 Metadata [391 kB]
-Get:24 http://us.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 DEP-11 Metadata [944 B]
-Get:25 http://us.archive.ubuntu.com/ubuntu focal-backports/main amd64 DEP-11 Metadata [7,980 B]
-Get:26 http://us.archive.ubuntu.com/ubuntu focal-backports/universe amd64 DEP-11 Metadata [30.8 kB]
-Fetched 6,857 kB in 20s (343 kB/s)
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-curl is already the newest version (7.68.0-1ubuntu2.7).
-gnupg is already the newest version (2.2.19-3ubuntu2.1).
-apt-transport-https is already the newest version (2.0.6).
-0 upgraded, 0 newly installed, 0 to remove and 27 not upgraded.
-[34m
-* Installing APT package sources for Datadog
-[0m
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9001  100  9001    0     0   8531      0  0:00:01  0:00:01 --:--:--  8531
-gpg: key D3A80E30382E94DE: "Datadog, Inc <package@datadoghq.com>" not changed
-gpg: Total number processed: 1
-gpg:              unchanged: 1
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0   7941      0 --:--:-- --:--:-- --:--:--  7941
-gpg: key 32637D44F14F620E: "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" not changed
-gpg: Total number processed: 1
-gpg:              unchanged: 1
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9001  100  9001    0     0  10715      0 --:--:-- --:--:-- --:--:-- 10702
-gpg: key D3A80E30382E94DE: "Datadog, Inc <package@datadoghq.com>" not changed
-gpg: Total number processed: 1
-gpg:              unchanged: 1
-[34m
-* Installing the Datadog Agent package
-[0m
-Ign:1 https://apt.datadoghq.com stable InRelease
-Hit:2 https://apt.datadoghq.com stable Release
-Reading package lists...
-  [33mInstalling package: datadog-agent
-[0m
-Reading package lists...
-Building dependency tree...
-Reading state information...
-datadog-signing-keys is already the newest version (1:1.1.0-1).
-The following packages will be upgraded:
-  datadog-agent
-1 upgraded, 0 newly installed, 0 to remove and 26 not upgraded.
-Need to get 255 MB of archives.
-After this operation, 34.0 MB of additional disk space will be used.
-Get:1 https://apt.datadoghq.com stable/7 amd64 datadog-agent amd64 1:7.35.0-1 [255 MB]

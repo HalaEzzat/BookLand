@@ -27,6 +27,7 @@ class BookList(LoginRequiredMixin,ListView):
     template_name = 'book_list.html'
     login_url = '/login/'
     redirect_field_name = 'registration/login.html'
+    paginate_by = 4
 
 class SignUp(generic.CreateView):
     form_class = UserCreationForm
