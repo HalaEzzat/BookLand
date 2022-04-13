@@ -42,6 +42,50 @@ Quit the server with CONTROL-C.
 <li>To Create The Admin user : Run "python manage.py createsuperuser" and Follow the instructions </li>
 </ol>
 
+<h2>Steps to Docorize a Django App: </h2>
+
+Steps to set up Django on MySQL in Docker containers (using docker compose)
+<br /><br />
+<p><ul><b>Prerequisites:</b><br />
+<li>Installed Docker</li>
+<li>Installed docker-compose</li>
+<li>Your Django application code</li></ul></p>
+
+<p><ul><b>Desired Specs:</b><br />
+<li>Python 3.8.10 </li>
+<li>MySQL 5.7 </li>
+<li>docker compose version 3</li>
+</ul></p>
+
+<p><ul><b>Steps:<br /><br />
+<li>Dockerfile:</li>
+  
+![image](https://user-images.githubusercontent.com/22475831/163283452-010ccb25-b93d-4b43-afe1-b3eb72ac998d.png)
+
+<br /><br />
+
+<li>docker-compose.yml</li>
+
+![image](https://user-images.githubusercontent.com/22475831/163283760-a9abe602-b41a-40c7-aeb9-31d40b6e90c5.png)
+
+<br /><br />
+  
+<li>requirements.txt</li><br />
+  
+Run "pip install pipreqs" in your project directory to extract "requirements.txt"<br />
+     pipreqs "/path/to/project" <br />
+
+<li>settings.py</li>  
+
+  ![image](https://user-images.githubusercontent.com/22475831/163284435-fe9cf55d-39d5-49ee-b942-d16e0388f8a1.png)
+  
+<li>Run "docker-compose build"</li>
+<li>Run "docker-compose up"</li>
+<li>Open browser to localhost:8000</li>
+  
+</ul></p>
+
+
 <h2>Screenshots</h2>
 
 ![image](https://user-images.githubusercontent.com/22475831/162617770-d94f7358-05a9-42ba-8323-b31840fdb2e4.png)
