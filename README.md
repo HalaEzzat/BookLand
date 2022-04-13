@@ -51,8 +51,3 @@ Quit the server with CONTROL-C.
 ![image](https://user-images.githubusercontent.com/22475831/162617971-cc61cfa3-2fb2-44d8-842c-720fa010a7b3.png)
 ![image](https://user-images.githubusercontent.com/22475831/162618025-e6f3523a-7b5f-4f88-9a7c-fdf35c8e38b7.png)
 ![image](https://user-images.githubusercontent.com/22475831/162618135-7b6311c9-b708-4c21-a542-2c5299dec982.png)
-
-<<<<<<< HEAD
-
-=======
->>>>>>> d77a388112b34c6dbeb2ee415656b4ffaf6ceead
