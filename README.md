@@ -26,67 +26,95 @@ This app will send metrics to datadog.com APM by default just install ddtrace us
 For More Info: https://www.datadoghq.com/blog/monitoring-django-performance/
 
 <h2>Running The App</h2>
-<ol>
-<li> Run on the terminal: "pip install -r requirements.txt"</li>
-<li> Create a root DB user and DB Named "BookStore" or change the settings for that in the DataBase section in settings.py </li>
-<li> Create Django Secret and update settings.py</li>
-<li> Run "python manage.py migrate"</li>
-<li> Run "python manage.py runserver"</li>
-<li>Now you should see this output on your terminal: "Performing system checks...
+
+- Run on the terminal: 
+```python
+ pip install -r requirements.txt
+``` 
+- Create a root DB user and DB Named "BookStore" or change the settings for that in the DataBase section in ```settings.py ```
+- Create Django ```Secret``` and update ```settings.py```
+- Run 
+```python
+python manage.py migrate 
+```
+- Run
+```python 
+python manage.py runserver
+```
+- Now you should see this output on your terminal: 
+``` 
+Performing system checks...
 
 System check identified no issues (0 silenced).
 Django version 2.0.2, using settings 'BookStore.settings'
 Starting development server at http://127.0.0.1:8000/
-Quit the server with CONTROL-C.
-"<br /><br />Now Copy that link :"http://127.0.0.1:8000/" Paste it in your Browser</li>
-<li>To Create The Admin user : Run "python manage.py createsuperuser" and Follow the instructions </li>
-</ol>
+Quit the server with CONTROL-C. 
+```
+- Now Copy that link :
+```sh
+http://127.0.0.1:8000/ 
+```
+- Paste it in your Browser
+- To Create The Admin user : Run 
+```python
+python manage.py createsuperuser
+```
+- and Follow the instructions 
+
 
 <h2>Steps to Docorize a Django App: </h2>
 
 Steps to set up Django on MySQL in Docker containers (using docker compose)
-<br /><br />
-<p><ul><b>Prerequisites:</b><br />
-<li>Installed Docker</li>
-<li>Installed docker-compose</li>
-<li>Your Django application code</li></ul></p>
 
-<p><ul><b>Desired Specs:</b><br />
-<li>Python 3.8.10 </li>
-<li>MySQL 5.7 </li>
-<li>docker compose version 3</li>
-</ul></p>
+### Prerequisites:
+- Installed Docker
+- Installed docker-compose
+- Your Django application code
 
-<p><ul><b>Steps:<br /><br />
-<li>Dockerfile:</li>
+### Desired Specs:
+- Python 3.8.10 
+- MySQL 5.7 
+- docker compose version 3
+
+### Steps:
+- Dockerfile:
   
 ![image](https://user-images.githubusercontent.com/22475831/163283452-010ccb25-b93d-4b43-afe1-b3eb72ac998d.png)
 
 <br /><br />
 
-<li>docker-compose.yml</li>
+- docker-compose.yml
 
 ![image](https://user-images.githubusercontent.com/22475831/163283760-a9abe602-b41a-40c7-aeb9-31d40b6e90c5.png)
 
 <br /><br />
   
-<li>requirements.txt</li><br />
+- requirements.txt
   
-Run "pip install pipreqs" in your project directory to extract "requirements.txt"<br />
-     pipreqs "/path/to/project" <br />
+- Run 
+```python
+pip install pipreqs
+```
+- in your project directory to extract "requirements.txt" run:
+```python
+pipreqs "/path/to/project" 
+```     
 
-<li>settings.py</li>  
+- settings.py
 
   ![image](https://user-images.githubusercontent.com/22475831/163284435-fe9cf55d-39d5-49ee-b942-d16e0388f8a1.png)
   
-<li>Run "docker-compose build"</li>
-<li>Run "docker-compose up"</li>
-<li>Open browser to localhost:8000</li>
+- Run 
+```sh
+docker-compose build
+```
+- Run 
+```sh
+docker-compose up
+```
+- Open browser to ``` localhost:8000 ```
   
-</ul></p>
-
-
-<h2>Screenshots</h2>
+## Screenshots
 
 ![image](https://user-images.githubusercontent.com/22475831/162617770-d94f7358-05a9-42ba-8323-b31840fdb2e4.png)
 ![image](https://user-images.githubusercontent.com/22475831/162617855-58d7ed35-12c9-4915-a8e4-48a8d610b61a.png)
