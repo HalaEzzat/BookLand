@@ -81,25 +81,20 @@ Steps to set up Django on MySQL in Docker containers (using docker compose)
   
 ![image](https://user-images.githubusercontent.com/22475831/163283452-010ccb25-b93d-4b43-afe1-b3eb72ac998d.png)
 
-<br /><br />
-
 - docker-compose.yml
 
 ![image](https://user-images.githubusercontent.com/22475831/163283760-a9abe602-b41a-40c7-aeb9-31d40b6e90c5.png)
 
-<br /><br />
-  
-- requirements.txt
+### requirements.txt
   
 - Run 
 ```python
 pip install pipreqs
 ```
-- in your project directory to extract "requirements.txt" run:
+- in your project directory to extract ``` requirements.txt ``` run:
 ```python
 pipreqs "/path/to/project" 
 ```     
-
 - settings.py
 
   ![image](https://user-images.githubusercontent.com/22475831/163284435-fe9cf55d-39d5-49ee-b942-d16e0388f8a1.png)
